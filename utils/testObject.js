@@ -1,19 +1,8 @@
-// taken from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-function uuidv4() {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
-
 const initialTime = Date.now();
 const hash = {};
-Array.from(new Array(100000)).map((value, idx) => {
-  const newDatum = uuidv4();
-  hash[`org-${idx + 1}`] = newDatum;
-  return idx;
-});
+for (let i = 1; i < 100001; i++) {
+  hash[`org-${i}`] = "some data";
+}
 const finalTime = Date.now();
 console.log("total run time (initial set object):", finalTime - initialTime);
 
@@ -21,7 +10,7 @@ function update() {
   const startTime = Date.now();
   for (let j = 0; j < 10; j++) {
     for (let i = 1; i < 100001; i++) {
-      hash[`org-${i}`] = uuidv4();
+      hash[`org-${i}`] = "some updated data";
     }
   }
   const endTime = Date.now();
