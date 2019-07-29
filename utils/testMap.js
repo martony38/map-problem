@@ -41,6 +41,33 @@ function getKeys() {
   console.log("total run time (get map):", endTime - startTime);
 }
 
+function getSize() {
+  let data;
+  const startTime = Date.now();
+  const size = map.size;
+  const endTime = Date.now();
+  console.log("total run time (get size map):", endTime - startTime);
+}
+
+function findKey() {
+  let data;
+  const startTime = Date.now();
+  const hasKey = map.has("org-23672362723");
+  const endTime = Date.now();
+  console.log("total run time (find key map):", endTime - startTime);
+}
+
+function clearPairs() {
+  let data;
+  const startTime = Date.now();
+  map.clear();
+  const endTime = Date.now();
+  console.log("total run time (clear map):", endTime - startTime);
+}
+
 update();
 iterate();
 getKeys();
+getSize();
+findKey();
+clearPairs();

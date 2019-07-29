@@ -7,9 +7,10 @@ initialTime = Date.now();
   your code starts here
 */
 
-const map = new Map();
-functionsAndArgs.forEach(([func, arg]) => {
-  map.set(func, arg);
+const map = {}; //new Map();
+functionsAndArgs.forEach(([func, arg], index) => {
+  //map.set(func, arg);
+  map[index] = { func, arg };
 });
 
 /* 

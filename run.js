@@ -8,7 +8,8 @@ const { map } = require("./map");
 */
 
 function getArg(func) {
-  const arg = map.get(func);
+  //const arg = map.get(func);
+  const arg = Object.values(map).find(value => value.func === func).arg;
   return arg;
 }
 

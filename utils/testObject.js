@@ -41,6 +41,33 @@ function getKeys() {
   console.log("total run time (get object):", endTime - startTime);
 }
 
+function getSize() {
+  let data;
+  const startTime = Date.now();
+  const size = Object.keys(hash).length;
+  const endTime = Date.now();
+  console.log("total run time (get size object):", endTime - startTime);
+}
+
+function findKey() {
+  let data;
+  const startTime = Date.now();
+  const hasKey = hash.hasOwnProperty("org-23672362723");
+  const endTime = Date.now();
+  console.log("total run time (find key object):", endTime - startTime);
+}
+
+function clearPairs() {
+  let data;
+  const startTime = Date.now();
+  Object.keys(hash).forEach(key => delete hash[key]);
+  const endTime = Date.now();
+  console.log("total run time (clear object):", endTime - startTime);
+}
+
 update();
 iterate();
 getKeys();
+getSize();
+findKey();
+clearPairs();
